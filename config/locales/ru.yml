@@ -2,6 +2,7 @@ ru:
   plugins:
     refinerycms_news:
       title: "Новости"
+      description: "Модульновостей, почти как настоящий"
   admin:
     news_items:
       news_item:
@@ -24,11 +25,14 @@ ru:
     index:
       published: "Опубликовано"
       read_more: "Читать далее"
+      no_items_yet: "Новостей пока что нет"
   activerecord:
     attributes:
       news_item:
         title: "Заголовок"
         body: "Публикация"
         publish_date: "Дата публикации"
+        expiration_date: "Актуально до"
+        digest: "Дайджест"
     models:
       news_item: "Новость"
