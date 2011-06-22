@@ -34,5 +34,6 @@ ru:
         publish_date: "Дата публикации"
         expiration_date: "Актуально до"
         digest: "Дайджест"
+        image: "Главное изображение"
     models:
       news_item: "Новость"
