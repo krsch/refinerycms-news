@@ -7,11 +7,11 @@
         <% if item.image %>
         <!-- EvilCat asked for this. I dunno y -->
         <div>
-          <div class="image_up" />
+          <div class="image_up"></div>
           <div class="image_container">
-            <%= image_fu item.image, '120x80#c', :title => item.title %>
+            <%= image_fu item.image, '120x80#c', :alt => item.title %>
           </div>
-          <div class="image_bottom" />
+          <div class="image_bottom"></div>
         </div>
         <% end %>
         <h2>
@@ -25,7 +25,7 @@
           </small>
         </p>
         <% if item.digest %>
-          <%= item.digest.html_safe %>
+          <%= item.digest.html_safe %><br />
           <%= link_to t('.read_more'), news_item_url(item) %>
         <% else %>
           <%= truncate  item.body, :length => 200,
