@@ -30,11 +30,25 @@
     <%= f.label :digest %>
     <%= f.text_area :digest, :rows => "6", :class => "wymeditor widest" %>
   </div>
+  
+  <div class='field'>
+    <%= f.label :image %>
+    <%= render :partial => "/shared/admin/image_picker", :locals => {:f => f, :field => :image_id, :image => @news_item.image } %>
+  </div>
 
   <div class='field'>
     <%= f.label :content %>
     <%= f.text_area :content, :rows => "20", :class => "wymeditor widest" %>
   </div>
+  
+  <div class='field'>
+    <span class='label_with_help'>
+      <%= f.label :parent_id, t('.parent_page') %>
+      <%= refinery_help_tag t('.parent_page_help') %>
+    </span>
+    <%= f.select :parent_id, nested_set_options(Page, @news_item.page) {|i| "#{'-' * i.level} #{i.title}" },
+                 :include_blank => true %>
+    </div>
 
   <%= render :partial => "/shared/admin/form_actions",
              :locals => {
