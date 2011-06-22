@@ -35,5 +35,6 @@ ru:
         expiration_date: "Актуально до"
         digest: "Дайджест"
         image: "Главное изображение"
+        parent_page: "Связана со страницей"
     models:
       news_item: "Новость"
