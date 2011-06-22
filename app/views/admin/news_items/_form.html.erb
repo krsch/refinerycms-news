@@ -43,7 +43,7 @@
   
   <div class='field'>
     <%= f.label :page_id, t('.parent_page') %>
-    <%= f.select :page_id, nested_set_options(Page, @news_item.page) {|i| "#{'-' * i.level} #{i.title}" },
+    <%= f.select :page_id, nested_set_options(Page) {|i| "#{'-' * i.level} #{i.title}" },
                  :include_blank => true, :selected => @news_item.page_id %>
     </div>
 

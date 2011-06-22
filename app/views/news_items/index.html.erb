@@ -4,12 +4,29 @@
   <% if @news_items.any? %>
     <% @news_items.each do |item| %>
       <article class="news_item_truncated">
-        <h2><%= link_to item.title, news_item_url(item) %></h2>
+        <% if item.image %>
+        <!-- EvilCat asked for this. I dunno y -->
+        <div>
+          <div class="image_up" />
+          <div class="image_container">
+            <%= image_fu item.image, '120x80#c', :title => item.title %>
+          </div>
+          <div class="image_bottom" />
+        </div>
+        <% end %>
+        <h2>
+          <% if item.page %>
+            [<%= item.page.title %>]
+          <% end %>
+          <%= link_to item.title, news_item_url(item) %></h2>
         <p>
-          <small><%= l(item.publish_date, :format => :long) %></small>
+          <small>
+            <%= l(item.publish_date, :format => :long) %>
+          </small>
         </p>
         <% if item.digest %>
           <%= item.digest.html_safe %>
+          <%= link_to t('.read_more'), news_item_url(item) %>
         <% else %>
           <%= truncate  item.body, :length => 200,
                         :omission => " ... #{link_to t('.read_more'), news_item_url(item)}",
