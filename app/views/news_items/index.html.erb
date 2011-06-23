@@ -35,7 +35,7 @@
       </article>
     <% end %>
 
-    <%= will_paginate(@news_items) %>
+    <%= will_paginate(@news_items, :previous_label => "&larr;".html_safe, :next_label => "&rarr;".html_safe) %>
   <% else %>
     <p><em><%= t('.no_items_yet') %></em></p>
   <% end %>
