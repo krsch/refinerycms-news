@@ -26,7 +26,7 @@
         </p>
         <p>
         <% if item.digest %>
-          <%= item.digest.html_safe.gsub(/^<p>(.*)<\/p>/, '\1') %>
+          <%=raw item.digest.html_safe.gsub(/^<p>(.*)<\/p>/, '\1') %>
           <%= link_to t('.read_more'), news_item_url(item) %>
         <% else %>
           <%= truncate  item.body.gsub(/^<p>(.*)<\/p>/, '\1'), :length => 200,

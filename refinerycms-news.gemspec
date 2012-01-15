@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.summary           = %q{Ruby on Rails news engine for RefineryCMS.}
   s.email             = %q{info@refinerycms.com}
   s.homepage          = %q{http://refinerycms.com}
-  s.authors           = %w(Resolve\ Digital Dmitry\ Grigoriev)
+  s.authors           = %w(Resolve\ Digital Dmitry\ Grigoriev Alexey\ Kreschuk)
   s.require_paths     = %w(lib)
 
   s.add_dependency    'refinerycms-core', '~> 1.0.0'
