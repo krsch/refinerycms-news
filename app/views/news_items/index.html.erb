@@ -19,11 +19,11 @@
             [<%= item.page.title %>]
           <% end %>
           <%= link_to item.title, news_item_url(item) %></h2>
-        <p>
-          <small>
-            <%= l(item.publish_date, :format => :long) %>
-          </small>
-        </p>
+        <%# <p> %>
+        <%#   <small> %>
+        <%#     <%= l(item.publish_date, :format => :long) %1> %>
+        <%#   </small> %>
+        <%# </p> %>
         <p>
         <% if item.digest %>
           <%=raw item.digest.html_safe.gsub(/^<p>(.*)<\/p>/, '\1') %>
